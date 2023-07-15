@@ -14,4 +14,4 @@ JUMLAH="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)
 echo "-------------------------------"
 echo "จำนวน user : $JUMLAH user"
 echo "-------------------------------"
-echo -e "Create by Jiraphat Yuenying"
+echo -e "tbmods"
