@@ -19,8 +19,8 @@ apt-get install bc -y
 apt-get -y install openvpn easy-rsa;
 apt-get -y install python;
 
-wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/jiraphaty/auto-script-vpn/master/openvpn.tar"
-wget -O /etc/openvpn/default.tar "https://raw.githubusercontent.com/jiraphaty/auto-script-vpn/master/default.tar"
+wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/mixserrm999/VPN/main/openvpn.tar"
+wget -O /etc/openvpn/default.tar "https://raw.githubusercontent.com/mixserrm999/VPN/main/default.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
 tar xf default.tar
@@ -36,13 +36,13 @@ systemctl restart openvpn
 
 apt-get -y install squid;
 cp /etc/squid/squid.conf /etc/squid/squid.conf.bak
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/jiraphaty/auto-script-vpn/master/squid.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/mixserrm999/VPN/main/squid.conf"
 sed -i $MYIP2 /etc/squid/squid.conf;
 systemctl restart squid
 
 #config client
 cd /etc/openvpn/
-wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/jiraphaty/auto-script-vpn/master/client.ovpn"
+wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/mixserrm999/VPN/main/client.ovpn"
 sed -i $MYIP2 /etc/openvpn/client.ovpn;
 cp client.ovpn /root/
 
@@ -55,12 +55,12 @@ yes | sudo ufw enable
 
 # download script
 cd /usr/bin
-wget -O member "https://raw.githubusercontent.com/jiraphaty/auto-script-vpn/master/member.sh"
-wget -O menu "https://raw.githubusercontent.com/jiraphaty/auto-script-vpn/master/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/jiraphaty/auto-script-vpn/master/usernew.sh"
-wget -O speedtest "https://raw.githubusercontent.com/jiraphaty/auto-script-vpn/master/speedtest_cli.py"
-wget -O userd "https://raw.githubusercontent.com/jiraphaty/auto-script-vpn/master/deluser.sh"
-wget -O trial "https://raw.githubusercontent.com/jiraphaty/auto-script-vpn/master/trial.sh"
+wget -O member "https://raw.githubusercontent.com/mixserrm999/VPN/main/member.sh"
+wget -O menu "https://raw.githubusercontent.com/mixserrm999/VPN/main/menu.sh"
+wget -O usernew "https://raw.githubusercontent.com/mixserrm999/VPN/main/usernew.sh"
+wget -O speedtest "https://raw.githubusercontent.com/mixserrm999/VPN/main/speedtest_cli.py"
+wget -O userd "https://raw.githubusercontent.com/mixserrm999/VPN/main/deluser.sh"
+wget -O trial "https://raw.githubusercontent.com/mixserrm999/VPN/main/trial.sh"
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 #echo "* * * * * service dropbear restart" > /etc/cron.d/dropbear
 chmod +x member
