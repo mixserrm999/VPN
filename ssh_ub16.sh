@@ -1,6 +1,6 @@
 #!/bin/bash
 #script by jiraphat yuenying
 
-wget -O /etc/ssh/sshd_config 'https://raw.githubusercontent.com/jiraphaty/auto-script-vpn/master/sshd_config'
+wget -O /etc/ssh/sshd_config 'https://raw.githubusercontent.com/mixserrm999/VPN/main/sshd_config'
 
 systemctl restart ssh
