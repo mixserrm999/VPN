@@ -1,5 +1,5 @@
 #!/bin/bash
-#script by jiraphat yuenying
+#script :
 
 read -p "Username : " Login
 read -p "Password : " Pass
