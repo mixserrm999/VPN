@@ -47,7 +47,7 @@ sed -i $MYIP2 /etc/openvpn/client.ovpn;
 cp client.ovpn /root/
 
 ufw allow ssh
-ufw allow 1194/tcp
+ufw allow 443/tcp
 ufw allow 8080/tcp
 ufw allow 3128/tcp
 ufw allow 80/tcp
